@@ -18,6 +18,8 @@ if your Makefile is configured correctly this will result in the creation of 4 c
 
 Now in combination with the audible tables you should be able to do the crack...
 
+Added the original [paper](https://lasecwww.epfl.ch/pub/lasec/doc/Oech03.pdf).
+
 ----
 
 ### RainbowCrack-NG
