@@ -3,16 +3,17 @@ OBJS = Public.o ChainWalkContext.o ChainWalkSet.o CrackEngine.o HashAlgorithm.o 
 all: rtgen rtdump rtsort rcrack
 
 # Build hacks for DragonFlyBSD (run "pkg install openssl" first)
-LDFLAGS += -L/usr/local/lib
+#LDFLAGS += -L/usr/local/lib
+LDFLAGS += -L/usr/local/opt/openssl@1.1/lib
 
 ChainWalkContext.o: ChainWalkContext.cpp
-	$(CXX) -c ChainWalkContext.cpp -I/usr/local/include -O3 -o ChainWalkContext.o
+	$(CXX) -c ChainWalkContext.cpp -I/usr/local/opt/openssl@1.1/include -O3 -o ChainWalkContext.o
 
 HashAlgorithm.o: HashAlgorithm.cpp
-	$(CXX) -c HashAlgorithm.cpp -I/usr/local/include -O3 -o HashAlgorithm.o
+	$(CXX) -c HashAlgorithm.cpp -I/usr/local/opt/openssl@1.1/include -O3 -o HashAlgorithm.o
 
 RainbowCrack.o: RainbowCrack.cpp
-	$(CXX) -c RainbowCrack.cpp -I/usr/local/include -O3 -o RainbowCrack.o
+	$(CXX) -c RainbowCrack.cpp -I/usr/local/opt/openssl@1.1/include -O3 -o RainbowCrack.o
 
 rtgen: $(OBJS)
 	$(CXX) -O3 $(LDFLAGS) Public.o ChainWalkContext.o HashAlgorithm.o HashRoutine.o RainbowTableGenerate.o -lssl -lcrypto -o rtgen

@@ -1,3 +1,25 @@
+# IvoNet Extra Notes
+
+How to build on macOS.
+
+```shell
+brew install openssl
+```
+Currently, on my machine that will install 1.1 (`/usr/local/etc/openssl@1.1/`)
+
+I have changed the Makefile so it will now build on a mac if you have the compiler tools installed.
+
+in project folder
+```shell
+cd src
+make all
+```
+if your Makefile is configured correctly this will result in the creation of 4 cli tools
+
+Now in combination with the audible tables you should be able to do the crack...
+
+----
+
 ### RainbowCrack-NG
 
 Free and open-source software to generate and use rainbow tables.
